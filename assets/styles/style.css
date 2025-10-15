@@ -1,0 +1,90 @@
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #dff3f7, #f0f4f8);
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+#game-area {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border: 3px solid #333;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    background-color: tomato;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s, opacity 0.25s;
+}
+
+.box:hover {
+    transform: scale(1.1);
+    background-color: #ff6347;
+}
+
+.box.destroy {
+    animation: explode 0.4s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) rotate(20deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+button {
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: scale(0.96);
+    background-color: #3c9142;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) inset;
+}
+
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
